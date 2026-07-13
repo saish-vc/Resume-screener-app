@@ -1,0 +1,33 @@
+JANE SMITH
+Email: jane.smith@example.com
+Phone: +1-555-456-7890
+Location: San Francisco, CA
+GitHub: github.com/janesmith
+
+PROFESSIONAL SUMMARY
+Dedicated Python Backend Developer with 3 years of experience. Specialized in designing, building, and optimizing server-side APIs and database systems. Experienced in working in collaborative team environments with a strong focus on clean code and performance.
+
+CORE SKILLS
+- Languages: Python, SQL, Bash
+- Frameworks: Flask, FastAPI
+- Databases: PostgreSQL, SQLite, Redis
+- Tools: Git, Linux, Nginx, Docker
+- Soft Skills: Problem Solving, Teamwork, Analytical
+
+PROFESSIONAL EXPERIENCE
+Software Engineer | Backend Systems
+DataGenius Corp (2024 - Present)
+- Developed and maintained critical backend APIs using Python and Flask, serving over 100k daily users.
+- Designed database schemas and optimized SQL queries in PostgreSQL, reducing query latency by 40%.
+- Integrated third-party APIs and built custom middleware to handle real-time data sync.
+- Utilized Git for version control and participated in daily standups and agile sprints.
+
+Junior Python Developer
+WebStart Inc (2023 - 2024)
+- Assisted in building server-side logic and endpoints using FastAPI.
+- Wrote unit tests and integration tests to ensure 90%+ code coverage.
+- Debugged backend application errors and collaborated with frontend developers.
+
+EDUCATION
+B.S. in Computer Science
+University of California, Berkeley (Graduated 2023)

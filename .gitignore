@@ -1,0 +1,10 @@
+venv/
+.venv/
+__pycache__/
+*.pyc
+.system_generated/
+.gemini/
+Resume-screener-app/
+.agents/
+.DS_Store
+*.log

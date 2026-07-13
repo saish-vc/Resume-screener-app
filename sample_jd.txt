@@ -1,0 +1,22 @@
+Job Title: Senior Full-Stack Python Developer
+
+Company Overview:
+We are a fast-growing tech company building the next generation of automation tools. We are looking for a passionate Senior Full-Stack Python Developer to join our agile development team.
+
+Key Responsibilities:
+- Design, build, and maintain efficient, reusable, and reliable backend code using Python, Django, and FastAPI.
+- Develop interactive, responsive, and user-friendly frontend web applications using React and Tailwind CSS.
+- Design database schemas and optimize query performance in SQL (specifically PostgreSQL).
+- Package and deploy applications using Docker containers and manage cloud deployments on AWS.
+- Collaborate with product managers, UX designers, and other engineers in an Agile environment.
+- Write clean, well-tested, and well-documented code, participating in peer code reviews.
+
+Required Skills and Qualifications:
+- 5+ years of software development experience with professional exposure to Python.
+- Strong hands-on experience with web frameworks like Django, Flask, or FastAPI.
+- Proficient in frontend development using JavaScript/TypeScript and React.
+- Solid understanding of SQL database design, PostgreSQL, and query optimization.
+- Experience with Docker, Git, and modern CI/CD pipelines.
+- Hands-on experience with cloud platforms, preferably AWS (Amazon Web Services).
+- Excellent communication and problem-solving skills, with a track record of effective teamwork.
+- Understanding of Agile/Scrum development methodologies.
