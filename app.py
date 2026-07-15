@@ -26,22 +26,27 @@ if not os.path.exists("sample_resumes") or len(os.listdir("sample_resumes")) < 3
         pass
 
 # ---------------------------------------------------------
-# Professional UI Styling
+# Professional UI Styling with Premium Beige Theme
 # ---------------------------------------------------------
 st.markdown("""
 <style>
     :root {
-        --primary-color: #0F172A;
-        --secondary-color: #1E293B;
-        --accent-color: #3B82F6;
-        --accent-light: #60A5FA;
-        --success-color: #10B981;
-        --warning-color: #F59E0B;
-        --danger-color: #EF4444;
-        --background: #F8FAFC;
-        --border-color: #E2E8F0;
-        --text-primary: #0F172A;
-        --text-secondary: #64748B;
+        /* Premium Beige Color Palette */
+        --primary-color: #3D3D3D;
+        --secondary-color: #5C5148;
+        --accent-color: #A67C52;
+        --accent-light: #C99A6E;
+        --success-color: #7BA96E;
+        --warning-color: #D4A574;
+        --danger-color: #B85C5C;
+        --background: #F5F1ED;
+        --card-bg: #FEFCF9;
+        --border-color: #E8DFD5;
+        --text-primary: #3D3D3D;
+        --text-secondary: #8B7E76;
+        --beige-light: #F9F6F3;
+        --beige-medium: #E8DFD5;
+        --beige-dark: #D4C4B8;
     }
 
     * {
@@ -51,7 +56,7 @@ st.markdown("""
     }
 
     body, .main {
-        background-color: var(--background);
+        background: linear-gradient(135deg, var(--background) 0%, var(--beige-light) 100%);
         color: var(--text-primary);
     }
 
@@ -61,8 +66,11 @@ st.markdown("""
         align-items: center;
         gap: 15px;
         margin-bottom: 2rem;
-        padding: 2rem 0;
-        border-bottom: 2px solid var(--border-color);
+        padding: 2rem;
+        border-bottom: 3px solid var(--accent-color);
+        background: linear-gradient(135deg, var(--card-bg) 0%, var(--beige-light) 100%);
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     }
 
     .main-title {
@@ -90,58 +98,61 @@ st.markdown("""
         display: flex;
         align-items: center;
         gap: 10px;
+        padding-bottom: 0.75rem;
+        border-bottom: 2px solid var(--accent-color);
     }
 
     /* Card Styles */
     .metric-card {
-        background: white;
-        border-radius: 10px;
+        background: linear-gradient(135deg, var(--card-bg) 0%, var(--beige-light) 100%);
+        border-radius: 12px;
         padding: 1.5rem;
-        border: 1px solid var(--border-color);
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        border: 2px solid var(--border-color);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         transition: all 0.3s ease;
     }
 
     .metric-card:hover {
         border-color: var(--accent-color);
-        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+        box-shadow: 0 8px 20px rgba(166, 124, 82, 0.12);
+        transform: translateY(-2px);
     }
 
     /* Verdict Pills */
     .verdict-high {
         display: inline-block;
-        background: linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 100%);
-        color: #065F46;
+        background: linear-gradient(135deg, #E8F3E8 0%, #D4E8D4 100%);
+        color: #4A6B4A;
         font-weight: 700;
         padding: 0.5rem 1rem;
         border-radius: 20px;
-        border: 1px solid #6EE7B7;
+        border: 1px solid #A8D4A8;
         font-size: 0.9rem;
-        box-shadow: 0 1px 2px rgba(16, 185, 129, 0.1);
+        box-shadow: 0 2px 4px rgba(123, 169, 110, 0.15);
     }
 
     .verdict-medium {
         display: inline-block;
-        background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);
-        color: #92400E;
+        background: linear-gradient(135deg, #F9F1E8 0%, #F0E3D4 100%);
+        color: #7A5C3C;
         font-weight: 700;
         padding: 0.5rem 1rem;
         border-radius: 20px;
-        border: 1px solid #FCD34D;
+        border: 1px solid #D4A574;
         font-size: 0.9rem;
-        box-shadow: 0 1px 2px rgba(245, 158, 11, 0.1);
+        box-shadow: 0 2px 4px rgba(212, 165, 116, 0.15);
     }
 
     .verdict-low {
         display: inline-block;
-        background: linear-gradient(135deg, #FEF2F2 0%, #FEE2E2 100%);
-        color: #7F1D1D;
+        background: linear-gradient(135deg, #F8E8E8 0%, #EDD4D4 100%);
+        color: #7A4C4C;
         font-weight: 700;
         padding: 0.5rem 1rem;
         border-radius: 20px;
-        border: 1px solid #FCA5A5;
+        border: 1px solid #D4A4A4;
         font-size: 0.9rem;
-        box-shadow: 0 1px 2px rgba(239, 68, 68, 0.1);
+        box-shadow: 0 2px 4px rgba(184, 92, 92, 0.15);
     }
 
     /* Button Styles */
@@ -158,18 +169,18 @@ st.markdown("""
     .stButton > button[kind="primary"] {
         background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-light) 100%) !important;
         color: white !important;
-        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3) !important;
+        box-shadow: 0 4px 12px rgba(166, 124, 82, 0.3) !important;
     }
 
     .stButton > button[kind="primary"]:hover {
-        box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4) !important;
+        box-shadow: 0 8px 20px rgba(166, 124, 82, 0.4) !important;
         transform: translateY(-2px);
     }
 
     .stButton > button[kind="secondary"] {
-        background: var(--secondary-color) !important;
-        color: white !important;
-        border: 1px solid var(--border-color) !important;
+        background: var(--beige-medium) !important;
+        color: var(--primary-color) !important;
+        border: 2px solid var(--border-color) !important;
     }
 
     /* Input Styles */
@@ -179,55 +190,77 @@ st.markdown("""
 
     .stTextArea > div > div > textarea {
         border-radius: 8px !important;
-        border: 1px solid var(--border-color) !important;
+        border: 2px solid var(--border-color) !important;
+        background-color: var(--card-bg) !important;
+        color: var(--text-primary) !important;
         font-family: 'Fira Code', monospace;
     }
 
+    .stTextArea > div > div > textarea:focus {
+        border-color: var(--accent-color) !important;
+    }
+
     /* Sidebar Styling */
+    [data-testid="stSidebar"] {
+        background: linear-gradient(180deg, var(--beige-light) 0%, var(--background) 100%);
+    }
+
     .sidebar .sidebar-content {
-        background-color: white;
+        background-color: transparent;
     }
 
     /* Dataframe Styles */
     .stDataFrame {
-        border-radius: 8px !important;
-        border: 1px solid var(--border-color) !important;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+        border-radius: 12px !important;
+        border: 2px solid var(--border-color) !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+        background-color: var(--card-bg) !important;
     }
 
     /* Expander Styles */
     .streamlit-expanderHeader {
         border-radius: 8px !important;
-        border: 1px solid var(--border-color) !important;
-        background-color: white !important;
+        border: 2px solid var(--border-color) !important;
+        background: linear-gradient(135deg, var(--card-bg) 0%, var(--beige-light) 100%) !important;
         padding: 1rem !important;
         font-weight: 600 !important;
         transition: all 0.3s ease;
     }
 
     .streamlit-expanderHeader:hover {
-        background-color: var(--background) !important;
+        background: linear-gradient(135deg, var(--beige-light) 0%, var(--background) 100%) !important;
         border-color: var(--accent-color) !important;
+        box-shadow: 0 4px 12px rgba(166, 124, 82, 0.1) !important;
     }
 
     /* Tab Styles */
     .stTabs [data-baseweb="tab-list"] {
         gap: 1rem;
+        background: var(--background);
+        padding: 0.5rem;
+        border-radius: 8px;
     }
 
     .stTabs [data-baseweb="tab"] {
         border-radius: 8px !important;
         padding: 0.75rem 1rem !important;
         font-weight: 600;
+        background: var(--beige-medium);
+        color: var(--text-primary);
+    }
+
+    .stTabs [data-baseweb="tab"][aria-selected="true"] {
+        background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-light) 100%);
+        color: white;
     }
 
     /* Metric Styles */
     .stMetric {
-        background: white;
+        background: linear-gradient(135deg, var(--card-bg) 0%, var(--beige-light) 100%);
         padding: 1.5rem;
-        border-radius: 10px;
-        border: 1px solid var(--border-color);
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        border-radius: 12px;
+        border: 2px solid var(--border-color);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     }
 
     .stMetric > div > div > label {
@@ -255,6 +288,8 @@ st.markdown("""
         border-radius: 8px !important;
         padding: 1rem 1.5rem !important;
         font-weight: 500;
+        background-color: var(--card-bg) !important;
+        border-left: 4px solid var(--accent-color) !important;
     }
 
     .stAlert > div > div > div > p {
@@ -264,7 +299,8 @@ st.markdown("""
     /* Code Block Styling */
     .stCodeBlock {
         border-radius: 8px !important;
-        border: 1px solid var(--border-color) !important;
+        border: 2px solid var(--border-color) !important;
+        background-color: var(--beige-light) !important;
     }
 
     /* Horizontal Line */
@@ -289,17 +325,28 @@ st.markdown("""
         font-size: 0.85rem;
         font-weight: 600;
         margin: 0.25rem 0.25rem 0.25rem 0;
+        box-shadow: 0 2px 4px rgba(166, 124, 82, 0.2);
     }
 
     .skill-tag-missing {
         display: inline-block;
-        background: linear-gradient(135deg, var(--danger-color) 0%, #F87171 100%);
+        background: linear-gradient(135deg, var(--danger-color) 0%, #D17A7A 100%);
         color: white;
         padding: 0.4rem 0.8rem;
         border-radius: 20px;
         font-size: 0.85rem;
         font-weight: 600;
         margin: 0.25rem 0.25rem 0.25rem 0;
+        box-shadow: 0 2px 4px rgba(184, 92, 92, 0.2);
+    }
+
+    /* Info Box Styling */
+    .info-box {
+        background: linear-gradient(135deg, #F0F4F8 0%, #E8DFD5 100%);
+        padding: 1rem;
+        border-radius: 8px;
+        border-left: 4px solid var(--accent-color);
+        color: var(--text-secondary);
     }
 
     /* Responsive */
@@ -348,9 +395,9 @@ with st.sidebar:
     st.markdown("---")
     
     st.markdown("""
-    <div style="background: linear-gradient(135deg, #F0F4F8 0%, #E2E8F0 100%); padding: 1rem; border-radius: 8px; border-left: 4px solid var(--accent-color);">
+    <div style="background: linear-gradient(135deg, #F9F6F3 0%, #E8DFD5 100%); padding: 1rem; border-radius: 8px; border-left: 4px solid var(--accent-color);">
         <p style="margin: 0; font-size: 0.85rem; color: var(--text-secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Quick Start</p>
-        <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem; color: var(--text-primary); line-height: 1.5;">
+        <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem; color: var(--primary-color); line-height: 1.5;">
             <strong>1.</strong> Paste a job description<br>
             <strong>2.</strong> Upload resumes or use samples<br>
             <strong>3.</strong> Click "Screen & Match"
@@ -628,7 +675,7 @@ if screen_clicked:
         elif candidate["Verdict"] == "Medium Match":
             verdict_class = "verdict-medium"
             
-        rank_badge = f"<span style='display: inline-block; background: var(--accent-color); color: white; padding: 0.25rem 0.75rem; border-radius: 20px; font-weight: 700; font-size: 0.85rem; margin-right: 0.5rem;'>#{idx+1}</span>"
+        rank_badge = f"<span style='display: inline-block; background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-light) 100%); color: white; padding: 0.25rem 0.75rem; border-radius: 20px; font-weight: 700; font-size: 0.85rem; margin-right: 0.5rem;'>#{idx + 1}</span>"
         score_display = f"<span style='font-weight: 700; color: var(--accent-color); font-size: 1.1rem;'>{candidate['Match Score (%)']:.1f}%</span>"
         
         header_text = f"{rank_badge} {candidate['Candidate / Filename']}"
